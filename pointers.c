@@ -38,10 +38,6 @@ int main() {
   */
   pointer_1 = &original_value;
 
-  printf("original_value is: %d\n", original_value);
-  printf("pointer_1 is: %p\n", &pointer_1);
-  printf("------ Phase 0 end ------\n");
-
   /*
    * To modify the value contained in the memory address 
    * referenced by the pointer, we can use the dereferencing
@@ -49,9 +45,6 @@ int main() {
    * referencing to, and then we can just modify it!
   */
   *pointer_1 += 2;
-  printf("pointer_1 was modified to: %p\n", &pointer_1);
-  printf("original_value is now %d\n", original_value);
-  printf("------ Phase 2 end ------\n");
 
   /*
    * We can also assign a pointer to point to another pointer
@@ -62,8 +55,6 @@ int main() {
    */
   int *pointer_2;
   pointer_2 = pointer_1;
-  printf("pointer_2 is %p, and it's value is %d\n", &pointer_2, *pointer_2);
-  printf("------ Phase 3 end ------\n");
 
   /*
    * We can use pointers to modify the values of a variable inside
@@ -89,8 +80,6 @@ int main() {
   /*
    * After running the swap() function, swap_value_x
    */
-  printf("swap_value_x is: %d -- swap_value_y: %d\n", swap_value_x, swap_value_y);
-  printf("swap_pointer_x is: %d -- swap_pointer_y: %d\n", *swap_pointer_x, *swap_pointer_y);
 
   return 0;
 }
@@ -105,14 +94,9 @@ void swap(int *pointer_x, int *pointer_y) {
   int temp;
   // In the beginning, pointer_x is: 0x6fb43254 -- pointer_y is 0x6fb43250
 
-  printf("In the beginning, pointer_x is: %p -- pointer_y is %p\n", *pointer_x, *pointer_y);
-
   temp = *pointer_x; // pointer_x is: 0x6fb43254 -- temp is 0x6fb43254
-  printf("pointer_x is: %p -- temp is %p\n", *pointer_x, temp);
 
   *pointer_x = *pointer_y; // pointer_x is: 0x6fb43250 -- pointer_y is 0x6fb43250
-  printf("pointer_x is: %p -- pointer_y is %p\n", *pointer_x, *pointer_y);
 
   *pointer_y = temp; // After the full swap pointer_x is: 0x6fb43250 -- pointer_y is 0x6fb43254
-  printf("After the full swap pointer_x is: %p -- pointer_y is %p\n", *pointer_x, *pointer_y);
 }
