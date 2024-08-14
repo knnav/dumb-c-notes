@@ -77,10 +77,6 @@ int main() {
 
   swap(&swap_pointer_x, &swap_pointer_y);
 
-  /*
-   * After running the swap() function, swap_value_x
-   */
-
   return 0;
 }
 
